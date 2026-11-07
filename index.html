@@ -352,7 +352,7 @@ window.buyW=id=>{const w=WI[id];if(!w||pl.wo[id])return'';if(pl.gold<w.p)return'
 /* account locali (solo su questo dispositivo/browser) */
 let USER=null;const AK='emberfall.acc',UK='emberfall.user',SVK=()=>'emberfall.save.v1.'+USER;
 /* === ACCOUNT ONLINE (Firebase Authentication via REST) === */
-const EF={url:'https://nyroz-online-default-rtdb.europe-west1.firebasedatabase.app',k:'INCOLLA_QUI_WEB_API_KEY',u:'',t:null,rt:null,uid:null},SK='emberfall.sess';
+const EF={url:'https://nyroz-online-default-rtdb.europe-west1.firebasedatabase.app',k:'AIzaSyAIqbF-5oUY80RJNUIzmDj7odWZL_0g5D4',u:'',t:null,rt:null,uid:null},SK='emberfall.sess';
 if(EF.k.startsWith('INCOLLA'))EF.k='';
 const idt=(ep,b)=>fetch('https://identitytoolkit.googleapis.com/v1/accounts:'+ep+'?key='+EF.k,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(r=>r.json());
 EF.set=r=>{EF.t=r.idToken||r.id_token;EF.rt=r.refreshToken||r.refresh_token;EF.uid=r.localId||r.user_id;try{localStorage.setItem(SK,JSON.stringify({rt:EF.rt,u:EF.u}))}catch(e){}};
